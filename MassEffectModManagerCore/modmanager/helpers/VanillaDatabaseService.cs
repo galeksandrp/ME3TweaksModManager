@@ -616,6 +616,7 @@ namespace MassEffectModManagerCore.modmanager.helpers
             [@"f4331d60672509b342da12bc42b4622f"] = @"Origin 2.0.0.47902", // May 14 Launch Version
             [@"ade71fcaa13224e383a848b90db807f2"] = @"Origin 2.0.0.48204", // May 17
             [@"92c9915cf4da2b8fb0b8ebb0795ba2d9"] = @"Origin 2.0.0.48602", // June 7
+            [@"9ba949069dec1149788708603f0da6c5"] = @"FLT 2.0.0.48602",
         };
 
         private static Dictionary<string, string> SUPPORTED_HASHES_LE2 = new Dictionary<string, string>
@@ -623,6 +624,7 @@ namespace MassEffectModManagerCore.modmanager.helpers
             [@"3b4dd0078a122476126c3b5c6665db16"] = @"Origin 2.0.0.47902",
             [@"fcb4c06b21853ece31a1897e136df45c"] = @"Origin 2.0.0.48204",
             [@"b584a70f56cfed7b8f35a081420227b0"] = @"Origin 2.0.0.48602",
+            [@"b6500e5c27721de2e73d6d9dc8962782"] = @"FLT 2.0.0.48602",
         };
 
         private static Dictionary<string, string> SUPPORTED_HASHES_LE3 = new Dictionary<string, string>

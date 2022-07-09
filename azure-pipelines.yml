@@ -6,6 +6,7 @@
 trigger:
 - master
 - M3Core
+- ci
 
 pool:
   vmImage: 'windows-latest'
@@ -13,7 +14,7 @@ pool:
 variables:
   solution: '**/*.sln'
   buildPlatform: 'x64'
-  buildConfiguration: 'WinRelease'
+  buildConfiguration: 'WinDebug'
   framework: 'netcoreapp3.1'
 
 steps:
@@ -21,10 +22,10 @@ steps:
   submodules: true 
   
 - task: UseDotNet@2
-  displayName: Install .NET 5.0 SDK
+  displayName: Install .NET 6.0 SDK
   inputs:
     packageType: 'sdk'
-    version: '5.0.x' 
+    version: '6.0.x' 
 
 - task: UseDotNet@2
   displayName: Install .NET Core 3.1 SDK
@@ -45,6 +46,9 @@ steps:
     command: 'test'
     projects: 'ME3TweaksModManager\\MassEffectModManagerCore.Tests\\MassEffectModManagerCore.Tests.csproj'
     arguments: '--configuration $(BuildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Include=ME3TweaksModManager'
+
+- publish: $(System.DefaultWorkingDirectory)/MassEffectModManagerCore/bin
+  artifact: ME3TweaksModManager
 
 # Generate the report using ReportGenerator (https://github.com/danielpalme/ReportGenerator)
 # First install the tool on the machine, then run it
